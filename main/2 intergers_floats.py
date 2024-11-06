@@ -30,5 +30,4 @@ print(num_1 < num_2)  #True
 print(num_1 >= num_2) #False
 print(num_1 <= num_2) #True
 
-print('jump')
 
