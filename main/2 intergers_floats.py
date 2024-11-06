@@ -20,7 +20,7 @@ example_1 = '100'
 example_2 = '200'
 print(int(example_1) + int(example_2)) #turn string to integer
 
-#📑📑cCOMPARISON OPERATORS
+#📑📑COMPARISON OPERATORS
 num_1 = 3
 num_2 = 4
 print(num_1 == num_2) #False
@@ -29,5 +29,4 @@ print(num_1 > num_2)  #False
 print(num_1 < num_2)  #True
 print(num_1 >= num_2) #False
 print(num_1 <= num_2) #True
-
 
