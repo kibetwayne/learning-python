@@ -1,5 +1,5 @@
 ''' data structure that stores key-value pairs
-    allows  fast retrieval of values based on unique keys(imutable keys)
+    allows  fast retrieval of values based on unique keys(immutable keys)
     used for mapping relationships between data.
     Mutable, Unordered, '''
     
@@ -21,4 +21,3 @@ del student['city']        # Deletes the 'city' key and its value
 
 print(student)
 student.clear()            # Removes all items from the dictionary
-#esgte
