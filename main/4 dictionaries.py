@@ -21,3 +21,4 @@ del student['city']        # Deletes the 'city' key and its value
 
 print(student)
 student.clear()            # Removes all items from the dictionary
+#esgte
