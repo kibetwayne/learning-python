@@ -21,3 +21,10 @@ del student['city']        # Deletes the 'city' key and its value
 
 print(student)
 student.clear()            # Removes all items from the dictionary
+
+#👉👉Items method
+'''When you print student2.items(), it outputs a list-like view of tuples, where each tuple consists of a key and its associated value from the dictionary.'''
+student2 = {'name': 'john', 'age': '30', 'course': ['eng', 'lit'], 'city': 'mombasa'}
+
+for key, value in student2.items():
+    print(f'{key}: {value}')

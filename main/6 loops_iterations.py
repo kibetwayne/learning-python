@@ -20,5 +20,35 @@ for i in range(5):#prints from 0 to 4
 
 #👉👉FOR LOOP with a dictionary
 student = {'name': 'alice', 'age': 20, 'grade': 'A'}
-for key, value in student.items():
+for key, value in student.items(): 
     print(key, ':', value)
+
+#👉👉WHILE loop
+#? (syntax: while condition:)
+
+count = 5
+while count > 0:
+    print(count)
+    count -= 1
+
+#👉👉BREAK AND CONTINUE STATEMENTS
+'''
+Break == exits loops immediately
+Continue == skips the rest of the current iteration and moves to the next iteration
+'''
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+
+for i in range(5):
+    if i == 3:
+        print('three')
+        continue
+    print(i)
+
+#👉👉NESTED LOOPS == loops within loops
+num = [1,2,3,4,5,6,7,8]
+for i in num:
+    for word in ['odd', 'even']:
+        print (i, word)
