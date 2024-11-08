@@ -73,6 +73,17 @@ c = [1, 2, 3]
 print(a is c)     #  False,  a and c are different objects
 print(a == c)     #  True,  same content
 
+'''
+Python optimizes memory usage by reusing objects for some immutable values.
+'''
+x = 10
+y = 10
+print(x is y)    # True, because small integers are often reused by Python
+
+x = 1000
+y = 1000
+print(x is y)    # False, large integers are not necessarily reused
+
 #👉👉TRUTHY AND FALSY VALUES
 '''
 Falsy Values
