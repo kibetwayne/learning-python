@@ -13,6 +13,7 @@ def greet():
     print("Hello, welcome!")
     
 greet()  # Output: Hello, welcome!
+#!================================================================
 
 #👉👉Parameters and Arguments
 '''
@@ -54,6 +55,7 @@ def default_name(name="Guest"):
 
 default_name()  # Output: Hello, Guest
 default_name("Alice")  # Output: Hello, Alice
+#!================================================================
 
 #👉👉Args & Kwargs
 '''
@@ -76,6 +78,8 @@ def describe_person(**kwargs):
         print(f"{key}: {value}")
 
 describe_person(name="Alice", age=25, job="Developer")
+
+#!================================================================
 
 #👉👉local & global scope
 #?local scope == here you cant print salutations as it is inside the greet function
