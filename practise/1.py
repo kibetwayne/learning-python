@@ -18,4 +18,4 @@ def is_leap_year(year):
 def days_in_month(year, month):
     return 29 if month == 2 and is_leap_year(year) else month_days[month]
 
-print(days_in_month(2020, 3)' days')
+print(days_in_month(2020, 3))
