@@ -8,7 +8,7 @@ def calculations(num1, num2, operation):
     if operation == '*':
         return num1 * num2
     elif operation == '/':
-        return num1 / num2
+        return num1 / num2 if num2 != 0 else print('trying to divide by 0')
     elif operation == '+':
         return num1 + num2
     elif operation == '-':
