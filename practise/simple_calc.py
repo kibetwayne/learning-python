@@ -1,12 +1,20 @@
-num1 = input('enter the first number: ')
-num2 = input('enter the second number: ')
+def is_number(prompt):
+    while True:
+        user_input = input(f'{prompt}: ')
+        try:
+            return float(user_input)
+        except ValueError:
+            print('Please enter a valid number.')
+
+num1 = is_number('first digit')
+num2 = is_number('second digit')
 operation = input('enter the operation sign: ')
 
 def calculations(num1, num2, operation):
     if operation == '*':
         return num1 * num2
     elif operation == '/':
-        return num1 / num2 if num2 != 0 else print('trying to divide by 0')
+        return num1 / num2 if num2 != 0 else 'trying to divide by 0'
     elif operation == '+':
         return num1 + num2
     elif operation == '-':
@@ -16,14 +24,5 @@ def calculations(num1, num2, operation):
     else:
         print ('Invalid operation')
 
-try:
-    num1 = float(num1)
-    num2 = float(num2)
-    result = calculations(num1, num2, operation)
-    
-    if result != 'Invalid operation':
-        print('Result:', result)
-    else:
-        print(result)
-except ValueError:
-    print('Please enter valid numbers.')
+result = calculations(num1, num2, operation)
+print('Result:', result)
