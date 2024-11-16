@@ -63,6 +63,7 @@ def transcribe_to_mrna(dna):
 transcribe_to_mrna('ACGT')
 
 #!================================================================
+''' A function to sollve the exponential equation using'''
 def solve_exponential(base, result):
     num = 0
     while  result > 1:
@@ -83,3 +84,7 @@ def solve_exponential(base, result):
         answer += 1
         
 print(solve_exponential(2, 8))
+
+import math
+def solve_exponential(base, result):
+    return round(math.log(result,base))
