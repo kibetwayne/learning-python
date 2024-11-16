@@ -61,3 +61,24 @@ def transcribe_to_mrna(dna):
     
 
 transcribe_to_mrna('ACGT')
+
+#!================================================================
+def solve_exponential(base, result):
+    num = 0
+    while  result > 1:
+        if result % base != 0:
+            return -1  
+        result //= base   # result = result / base
+        num += 1
+        
+    return num
+
+print(solve_exponential(2, 8))
+
+def solve_exponential(base, result):
+    answer = 1
+    while true:
+        if (base**answer == result):
+            return answer
+        break
+    answer += 1
