@@ -77,7 +77,7 @@ print(solve_exponential(2, 8))
 
 def solve_exponential(base, result):
     answer = 1
-    while true:
+    while True:
         if (base**answer == result):
             return answer
         answer += 1
