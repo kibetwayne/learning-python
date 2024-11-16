@@ -80,5 +80,6 @@ def solve_exponential(base, result):
     while true:
         if (base**answer == result):
             return answer
-        break
-    answer += 1
+        answer += 1
+        
+print(solve_exponential(2, 8))
