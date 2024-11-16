@@ -19,3 +19,45 @@ def days_in_month(year, month):
     return 29 if month == 2 and is_leap_year(year) else month_days[month]
 
 print(days_in_month(2020, 3))
+
+#!================================================================
+'''write a function to find the missing positive number in a given list of numbers'''
+def find_missing_number(numbers):
+    n = len(numbers) + 1 
+    expected_sum = n * (n + 1) // 2 
+    actual_sum = sum(numbers)      
+    return expected_sum - actual_sum
+
+missing_number = find_missing_number([1,2,3,5])
+print(missing_number)
+
+#!================================================================
+'''function that turns DNA to mRNA'''
+def transcribe_to_mrna(dna):
+    switch = {
+        'A': 'U',
+        'T': 'A',
+        'C': 'G',
+        'G': 'C'
+    }
+    mrna = []
+    for l in dna:
+        if l  not in switch:
+            continue
+        mrna.append(switch[l])
+    return ''.join(mrna)
+
+transcribe_to_mrna('ACGT')   
+
+transcribe_to_mrna('ACGT')
+def transcribe_to_mrna(dna):
+    switch = {
+        'A': 'U',
+        'T': 'A',
+        'C': 'G',
+        'G': 'C'
+    }
+    return ''.join(switch[base] for base in dna )
+    
+
+transcribe_to_mrna('ACGT')
