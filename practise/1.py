@@ -30,6 +30,7 @@ def find_missing_number(numbers):
 
 missing_number = find_missing_number([1,2,3,5])
 print(missing_number)
+print(2342)
 
 #!================================================================
 '''function that turns DNA to mRNA'''
