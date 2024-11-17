@@ -88,3 +88,12 @@ print(solve_exponential(2, 8))
 import math
 def solve_exponential(base, result):
     return round(math.log(result,base))
+
+#!================================================================
+'''join two sets'''
+def get_union(set1, set2):
+    new = set1.union(set2)
+    print(new)
+    
+    
+get_union({1, 2, 3}, {2, 3, 4})
