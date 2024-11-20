@@ -97,3 +97,8 @@ def get_union(set1, set2):
     
     
 get_union({1, 2, 3}, {2, 3, 4})
+
+#!================================================================
+'''reverse a string'''
+name = 'tap water'
+print(name[::-1])
