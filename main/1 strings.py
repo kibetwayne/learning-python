@@ -46,3 +46,24 @@ greetings = 'hello'
 name = 'wayne'
 message = f'{greetings}, {name.upper()}. welcome'
 print(message)
+
+#!================================================================
+#?string slicing
+
+#1. Basic Slicing:
+text = "python"
+print(text[1:4])  # Output: "yth"
+
+#2. Omitting start or stop:
+print(text[:4])   # Output: "pyth" (start is 0 by default)
+print(text[2:])   # Output: "thon" (stops at the end of the string)
+
+#3. Using step:
+print(text[::2])  # Output: "pto" (every second character)
+print(text[1::2]) # Output: "yhn" (starts at index 1, every second character)
+
+#4. Reversing a Sequence:
+print(text[::-1])  # Output: "nohtyp" (reverses the string)
+
+#5. Negative Indices:
+print(text[-4:-1])  # Output: "tho" (slices from index -4 to -1, exclusive)
