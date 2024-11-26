@@ -5,7 +5,6 @@ empty_list = list()
 '''A list is an ordered, mutable collection of items. Allow duplicate items and can contain elements of different data types.
 '''
 
-
 my_list = [1, 2, 3, 4, 5]
 my_list2 = [1, 2, 3, 4, 5]
 courses = ['geo', 'hist', 'phy']
@@ -26,6 +25,7 @@ print(my_list2)
 courses2 = sorted(courses)  #doesnt make changes to original
 print(courses.index('hist'))#find the index of a value
 
+#!================================================================
 #📑📑TUPLES()
 empty_tuple = ()           #how to create empty tuple
 empty_tuple = tuple()
@@ -37,7 +37,7 @@ my_tuple = (1, 2, 3, 4, 5)
 print(my_tuple[0])         # Output: 1
 # my_tuple[1] = 10         # Error: Tuples are immutable
 
-
+#!================================================================
 #📑📑SETS{}
 empty_set = {}            #this isnt right as it creates an empty dictionary
 empty_list = set()        #how to create empty lists
