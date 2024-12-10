@@ -12,8 +12,22 @@ L  -  unsigned long  -  int                -    4
 f  -  float          -  float              -    4
 d  -  double         -  float              -    8
 '''
-
-
+#!================================================================
+# ====== ===== Types of arrays ===== ===== 
+#?lists
+# lists act as arrays => no additional libraries required
 vals =  [1, 2, 3, 4]
-vals.reverse() # reverse
+vals.append(5)
+vals.reverse() 
 print(vals)
+
+#?array module(static typed arrays)
+# *requires defining the type of element when creating the array 
+from array import *
+
+arr = array('i', [1, 2, 3, 4])
+arr.append(5)
+arr[1] = 10
+print(arr)
+
+#?NumPy Array
