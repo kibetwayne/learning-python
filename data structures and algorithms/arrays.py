@@ -1,4 +1,6 @@
 '''
+arrays can only store data of he same type
+
 typecode == c-type == python-type == size-in-bytes
 b  -  signed char    -  int                -    1
 B  -  unsighed char  -  int                -    1
@@ -25,10 +27,24 @@ print(vals)
 # *requires defining the type of element when creating the array using typecode
 from array import *
 
-arr = array('i', [1, 2, 3, 4])
-arr.append(5)
-arr[1] = 10
+arr = array('i', [1, 2, 3, 4, 5, 6, 7])
+arr2 = array('i', [20, 30, 40, 50])
+
+'''basic array operations'''
+arr.append(8)                       #add new element to the end of an array
+arr[1] = 10                         #modify an element in an array
+arr.extend(arr2)                    #used to add 1 array to the end of another array
+arr.insert(2, 11)                   #used to insert an element(11) at a specific index(2)
+arr.remove(3)                       #used to remove an element by its value
+print(f'removing last element {arr.pop()}')#used to remove the last element and returns it
+print(f'removing element by index {arr.pop(7)}')#used to remove an element by its index and returns it
+print(f'array length {len(arr)}')   #array length
 print(arr)
+
+'''array concatenation'''
+arr3 = arr + arr2
+print(arr3)
+
 
 #?NumPy Array
 '''efficient for multidimensional numeric computing'''
@@ -43,6 +59,11 @@ print(np_array * 2)  # Output: [2 4 6 8]
 # Create a 2D array (matrix)
 matrix = np.array([[1, 2], [3, 4]])
 print(matrix)
+
+'''array slicing'''
+a=np.array(['first', 'second', 'third', 'last'])
+print(a[0:2])
+print(a[::-1])
 
 #?panda series
 '''Pandas is a data analysis library, and its Series object functions like an array but with additional metadata
