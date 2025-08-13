@@ -11,12 +11,13 @@ courses = ['geo', 'hist', 'phy']
 
 #👉👉methods
 print(my_list[0])           # Output: 1
-my_list.append(6)           # Adds 6 to the end of the list
-my_list.insert(4, 'new')    # Adds to a specific location
-my_list.remove(1)
+my_list.remove(1)           # Removes the first occurrence of 1
+my_list.insert(3, 'new')    # Adds to a specific location
 my_list[2] = 'changed'      # Modifies the element at index 2
-my_list.extend(courses)     #add second list to 1st list
-print(my_list)              # Output: [1, 2, 'changed', 4, 5, 6]
+my_list.extend(courses)     # Adds second list to 1st list
+my_list.append(6)           # Adds 6 to the end of the list
+print(len(my_list))          # Output: 8 (length of the list)
+print(my_list)             
 
 my_list2.sort()             #largest to smallest
 my_list2.reverse()
