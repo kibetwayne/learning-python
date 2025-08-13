@@ -101,3 +101,4 @@ get_union({1, 2, 3}, {2, 3, 4})
 #!================================================================
 '''reverse a string'''
 name = 'tap water' #A step of -1 moves backward through 
+print(name[::-1])

@@ -1,4 +1,7 @@
 #📑STRINGS
+#!strings are immutabe. python doesnt change the original value of a string
+
+#👉string methods
 print(help(str))#list all mehods on string and what they do
 
 message = 'hello world'
@@ -26,6 +29,7 @@ print(text.replace("world", "Python"))  # "hello Python"
 
 # 4. Checking String Content
 print(text.startswith("he"))  # True
+print('hello' in text)        # True
 print(text.endswith("ld"))    # True
 print("123".isdigit())        # True
 print("hello123".isdigit())   # False
@@ -67,3 +71,37 @@ print(text[::-1])  # Output: "nohtyp" (reverses the string)
 
 #5. Negative Indices:
 print(text[-4:-1])  # Output: "tho" (slices from index -4 to -1, exclusive)
+
+#!================================================================
+#?inputs 
+
+car = input('what car do you prefer') #output is always a string
+print(f'your favorite car is {car}')
+
+#!================================================================
+#?conversion
+
+#1. string to int
+birth_year = input('what year were you born?')
+age = 2023 - int(birth_year)
+print(f'you are {age} years old')
+
+#2. int to string
+age = 25
+age_str = str(age)
+print(f'you are {age_str} years old')
+
+#3. string to float
+weight = input('what is your weight?')
+weight_float = float(weight)
+print(f'your weight is {weight_float}kg')
+
+#4. float to string
+weight_float = 75.5
+weight_str = str(weight_float)
+print(f'your weight is {weight_str}kg')
+
+#5. string to boolean
+is_student = input('are you a student?')
+is_student_bool = bool(is_student)
+print(f'you are a student: {is_student_bool}')

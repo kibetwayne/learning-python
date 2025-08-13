@@ -99,3 +99,4 @@ if name:
     print("Name exists.")
 else:
     print("Name is empty.")
+
