@@ -7,7 +7,7 @@ empty_list = list()
 
 my_list = [1, 2, 3, 4, 5]
 my_list2 = [1, 2, 3, 4, 5]
-courses = ['geo', 'hist', 'phy']
+courses = ['geo', 'hist', 'phy', 'pop']
 
 #👉👉methods
 print(my_list[0])           # Output: 1
@@ -16,7 +16,7 @@ my_list.insert(3, 'new')    # Adds to a specific location
 my_list[2] = 'changed'      # Modifies the element at index 2
 my_list.extend(courses)     # Adds second list to 1st list
 my_list.append(6)           # Adds 6 to the end of the list
-print(len(my_list))          # Output: 8 (length of the list)
+print(len(my_list))         # Output: 8 (length of the list)
 print(my_list)             
 
 my_list2.sort()             #largest to smallest
@@ -26,6 +26,19 @@ print(my_list2)
 courses2 = sorted(courses)  #doesnt make changes to original
 print(courses.index('hist'))#find the index of a value
 
+print(courses.pop(1))       #removes the value at index 1 and returns it    
+print(courses)
+
+print(my_list.index(2))      #rerurns the first occurence of the value in a list
+print(my_list.count(2))       #count how many times a value appears in the list
+
+
+nums = [2, 9, 1, 8, 5, 64]   #?syntax value in some_list
+print(7 in nums)     #in: A comparison operator that checks if a value is in a list 
+
+sum([5, 3, 4])             #sum: A function that returns the sum of a list
+
+[1, 2, 3, 2, 7, 2, 5].count(2) #count: counts the occurrences of a value in a list
 #!================================================================
 #📑📑TUPLES()
 empty_tuple = ()           #how to create empty tuple

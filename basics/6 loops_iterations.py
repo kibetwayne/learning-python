@@ -4,18 +4,21 @@ are used to execute a block of code multiple times. Useful when working with rep
 2.	while loop: Repeats a block of code if a specified condition is True.
 '''
 #👉👉FOR LOOP used to iterate over each item in a collection
-#? (syntax: for item in sequence)
+#? (syntax: for item in sequence)  for <variable> in <collection>: <code to repeat>
 
 fruits = ['apple', 'banana', 'cherry']
 for fruit in fruits:
     print(fruit)
 
 #for loop in range == often used to loop a specific number of times
-#? (syntax: for item in range(staring value, end)
+#? (syntax: for item in range(staring value, end, step value)
 for i in range(1,6):#prints starting with 1 upto 5
     print(i)
     
 for i in range(5):#prints from 0 to 4
+    print(i)
+    
+for i in range(1, 10, 2):#prints odd numbers from 1 to 9
     print(i)
 
 #👉👉FOR LOOP with a dictionary
@@ -33,7 +36,7 @@ while count > 0:
 
 #👉👉BREAK AND CONTINUE STATEMENTS
 '''
-Break == exits loops immediately
+Break == exits loops immediately if condition is met.
 Continue == skips the rest of the current iteration and moves to the next iteration
 '''
 for i in range(5):
