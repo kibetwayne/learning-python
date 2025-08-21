@@ -51,6 +51,17 @@ name = 'wayne'
 message = f'{greetings}, {name.upper()}. welcome'
 print(message)
 
+#8. finding a word in a string
+sentence = "The quick brown fox jumps over the lazy dog"
+print('fox' in sentence)  # True
+print('cat' in sentence)  # False
+
+#9. count
+print(sentence.count('o'))  # Count occurrences of 'o'
+
+#10. index
+print(sentence.index('fox'))  # Find index of 'fox'. Each caracter has an index
+
 #!================================================================
 #?string slicing
 
