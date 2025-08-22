@@ -55,3 +55,66 @@ num = [1,2,3,4,5,6,7,8]
 for i in num:
     for word in ['odd', 'even']:
         print (i, word)
+
+#!===================================================================
+#?Iterating over a list and modifying it
+'''!Never modify something while you iterate over it. Keep mutation and looping separate. 
+Do this instead:
+        1. Build up a new list from scratch.  
+        2. Modify a copy.
+        3. Iterate over a copy and modify the original.
+'''
+
+
+# * numbers = [10, 7, 8, 3, 12, 15]
+# * for number in numbers:
+# *     if number <= 10:
+# *         numbers.remove(number)
+# * print(numbers)
+
+''' As it runs, it clearly skips even looking at 7 or 3 and doesn't remove them. The index variable i runs through the usual values 0, 1, 2, ... as it's supposed to, but as the list changes those are no longer the positions we want. For example in the first iteration i is 0 and number is 10, which gets removed. This shifts the rest of the numbers left one position, so now 7 is in position 0. But then in the next iteration i is 1, and numbers[i] is 8. 7 got skipped.'''
+
+# Use a copy of the original collection if you need to modify it.
+numbers = [10, 7, 8, 3, 12, 15]
+for number in numbers.copy():
+    if number <= 10:
+        numbers.remove(number)
+print(numbers)  
+
+#Similarly, you could loop over the original and modify a copy:
+numbers = [10, 7, 8, 3, 12, 15]
+big_numbers = numbers.copy()
+
+for number in numbers:
+    if number <= 10:
+        big_numbers.remove(number)
+print(big_numbers)
+
+#Or you could build up a new list from scratch.
+
+numbers = [10, 7, 8, 3, 12, 15]
+big_numbers2 = []
+
+for number in numbers:
+    if number > 10:
+        big_numbers2.append(number)
+print(big_numbers2)
+
+
+#!===================================================================
+#multiplication table
+for cur in range(1, 13):
+    for num in range(1, 13):
+        answer = cur*num
+        print(f'{cur} x {num} = {answer}')
+    print('---')
+    
+# vs table
+players = ["Alice", "Bob", "Charlie"]
+
+for player in players:
+    for _ in players:
+        if player != _:
+            print(f'{player} vs {_}')
+            
+# possible combination of characters

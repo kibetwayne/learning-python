@@ -27,10 +27,6 @@ num = 1
 num += 1
 print(num)
 
-print(abs(-2.7)) 
-print(round(3.14159)) # Output: 3 (rounds to the nearest integer)
-print(round(3.75, 2)) # Output: 3.14 (rounds to 2 decimal places)
-
 example_1 = '100'
 example_2 = '200'
 print(int(example_1) + int(example_2)) #turn string to integer
@@ -47,3 +43,16 @@ second = float(input('enter second number '))
 sum = first + second
 print('sum is '+sum) #wont work because you are trying to add a string to a float
 print(f'the sum is {sum}')
+
+#📑📑methods
+#1. max
+print(max(1, 2, 3, 4, 5))  # Output: 5 (maximum value)
+#2. min           
+print(min(1, 2, 3, 4, 5))  # Output: 1 (minimum value)
+#3. abs
+print(abs(-10))  # Output: 10 (absolute value)
+#4. round
+print(round(3.14159, 2))  # Output: 3.14
+print(round(3.14159)) # Output: 3 (rounds to the nearest integer)
+#5. pow
+print(pow(2, 3))  # Output: 8 (2 raised to the power of 3)

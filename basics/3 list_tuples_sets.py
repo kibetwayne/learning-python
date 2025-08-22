@@ -17,7 +17,10 @@ my_list[2] = 'changed'      # Modifies the element at index 2
 my_list.extend(courses)     # Adds second list to 1st list
 my_list.append(6)           # Adds 6 to the end of the list
 print(len(my_list))         # Output: 8 (length of the list)
-print(my_list)             
+print(my_list)
+
+copied_list = my_list.copy()  # Creates a shallow copy of the list
+print(copied_list)             
 
 my_list2.sort()             #largest to smallest
 my_list2.reverse()
@@ -39,6 +42,19 @@ print(7 in nums)     #in: A comparison operator that checks if a value is in a l
 sum([5, 3, 4])             #sum: A function that returns the sum of a list
 
 [1, 2, 3, 2, 7, 2, 5].count(2) #count: counts the occurrences of a value in a list
+
+#📑📑difference between IS and == in lists
+# IS checks if two variables point to the same object in memory. lets say you have a set of twins, they are two different people(lists) but they look the same. when you append 4 to list1, list2 will not change because they are two different objects in memory.
+# == checks if the values of two variables are equal
+
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+list3 = list1
+
+print(list1 is list2)  # Output: False (different objects in memory)
+print(list1 == list2)  # Output: True (same values)
+print(list1 is list3)  # Output: True  there is only one list, and the two variables list1 and list3 both refer to that same list
+
 #!================================================================
 #📑📑TUPLES()
 empty_tuple = ()           #how to create empty tuple

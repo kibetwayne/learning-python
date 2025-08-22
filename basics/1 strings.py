@@ -1,5 +1,5 @@
 #📑STRINGS
-#!strings are immutabe. python doesnt change the original value of a string
+#!strings are immutabe. python doesnt change the original value of a string. You simply can't change the original string - you can only create new variables and asing the changes to it.
 
 #👉string methods
 print(help(str))#list all mehods on string and what they do
@@ -61,6 +61,9 @@ print(sentence.count('o'))  # Count occurrences of 'o'
 
 #10. index
 print(sentence.index('fox'))  # Find index of 'fox'. Each caracter has an index
+
+#11. length
+print(len(sentence))  # how many characters are in the string
 
 #!================================================================
 #?string slicing
