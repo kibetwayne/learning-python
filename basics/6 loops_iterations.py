@@ -118,3 +118,22 @@ for player in players:
             print(f'{player} vs {_}')
             
 # possible combination of characters
+letters = "ABCD"
+
+for char1 in letters:
+    for char2 in letters:
+        for char3 in letters:
+            for char4 in letters:
+                print(char1 +char2 +char3 +char4)
+                
+# upside down triangle
+size = 5
+use = size
+num = 1
+plus = '+'
+
+for _ in range(size):
+    if num <= size:
+        print(plus * use)
+        num += 1
+        use -= 1    
