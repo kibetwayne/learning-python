@@ -102,3 +102,15 @@ get_union({1, 2, 3}, {2, 3, 4})
 '''reverse a string'''
 name = 'tap water' #A step of -1 moves backward through 
 print(name[::-1])
+
+#!================================================================
+#?looping over nested lists
+'''print vertically'''
+strings = ["abcqwe", "def", "ghiq"]
+length = max(len(word) for word in strings)
+
+for i in range(length):
+    line = ""
+    for word in strings:
+        line += word[i] if i < len(word) else " "
+    print(line)
