@@ -56,6 +56,64 @@ def default_name(name="Guest"):
 default_name()  # Output: Hello, Guest
 default_name("Alice")  # Output: Hello, Alice
 #!================================================================
+#👉👉Function calling another function
+def print_many(n, thing):
+    for _ in range(n):
+        print(thing)
+
+def print_twice(x):
+    print_many(2, x)
+
+print_twice("Hello")
+
+#!================================================================
+#👉👉Function returning values
+def double(x):
+    return x * 2
+
+number = 5
+twice = double(number)
+print(number)
+print(twice)
+
+'''Once a return statement is executed, the function will stop, and the rest of the code is ignored. This means that any code immediately after a return in the same block is unreachable: '''
+def example():
+    return "This will be printed"
+    return "This will NOT be printed"
+    
+example()
+
+def foo():
+    for letter in 'abc':
+        for number in range(3):
+            print(f"{letter} {number}")
+            if letter == 'b':
+                return letter
+
+foo()   # **Output: a 0, a 1, a 2, b 0. As before, return stops the whole function, including all loops.
+
+def foo():
+    for letter in 'abc':
+        for number in range(3):
+            print(f"{letter} {number}")
+            if letter == 'b':
+                break
+
+foo()   # **Output: a 0, a 1, a 2, b 0, c 0, c 1, c 2. Here break only stops the inner loop.
+#!================================================================
+#👉👉testing functions
+def assert_equal(actual, expected):
+    if actual == expected:
+        print("OK")
+    else:
+        print(f"Error! {repr(actual)} != {repr(expected)}")
+def double(x):
+    return x * 2
+
+assert_equal(double(2), 4)
+assert_equal(double(5), 10)
+
+#!================================================================
 
 #👉👉Args & Kwargs
 '''
