@@ -58,7 +58,7 @@ for i in num:
 
 #!===================================================================
 #?Iterating over a list and modifying it
-'''!Never modify something while you iterate over it. Keep mutation and looping separate. 
+'''Never modify something while you iterate over it. Keep mutation and looping separate. 
 Do this instead:
         1. Build up a new list from scratch.  
         2. Modify a copy.

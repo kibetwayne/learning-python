@@ -69,3 +69,8 @@ print(11 <= x4 <= 20)   # False
 x5 = 7
 print(5 < x5 != 10)     # True  (5 < 7 and 7 != 10)
 print(5 < x5 == 7 < 10) # True  (5 < 7 and 7 == 7 and 7 < 10)
+
+#📑📑Combining AND and OR
+True or False and False #True
+''' it's equivalent to [True or (False and False)] This is because and has a higher priority than or
+Be extra careful when combining operators. Either add parentheses to be safe or break up your expression into smaller parts and assign each part to a variable'''
