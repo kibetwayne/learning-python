@@ -33,10 +33,10 @@ assert_equal(is_friend("Alice"), True)
 assert_equal(is_friend("Bob"), True)
 assert_equal(is_friend("Charlie"), False)
 
-#📑📑NOT returns the opposite of the variable
+#📑📑NOT  It negates the expression to which it is applied
 legal_age = True
 print(f'Is of legal age: {not legal_age}')
-
+not True or True #returns True. NOT has higher priority than OR & AND. 
 
 #📑📑COMPARISON CHAINING
 age = 20

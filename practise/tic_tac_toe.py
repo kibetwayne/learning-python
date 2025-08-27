@@ -11,35 +11,29 @@ def diagonal_winner(board):
         (diag2[0] == diag2[1] == diag2[2])
         )
 
-assert_equal(
-    diagonal_winner(
-        [
-            ['X', 'O', 'X'],
-            ['X', 'X', 'O'],
-            ['O', 'O', 'X']
-        ]
-    ),
-    True
-)
+
+
+def row_winner(board):
+    
 
 assert_equal(
-    diagonal_winner(
+    row_winner(
         [
-            ['X', 'X', 'O'],
-            ['X', 'O', 'O'],
-            ['O', 'X', 'X']
-        ]
-    ),
-    True
-)
-
-assert_equal(
-    diagonal_winner(
-        [
-            ['O', 'X', 'O'],
-            ['X', 'X', 'X'],
-            ['O', 'O', 'X']
+            ['A', 'A', 'B', 'A'],
+            [' ', ' ', ' ', ' '],
+            ['A', ' ', ' ', 'A'],
+            ['B', ' ', 'B', 'A']
         ]
     ),
     False
+)
+assert_equal(
+    row_winner(
+        [
+            ['X', ' ', 'X'],
+            ['O', 'X', 'X'],
+            ['O', 'O', 'O']
+        ]
+    ),
+    True
 )
