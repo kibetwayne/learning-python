@@ -70,6 +70,10 @@ string1 = ['h', 'e', 'l', 'l', 'o']
 print(''.join(string1))  # Join list of characters into a single string
 print('-'.join(string1))  # Join with a hyphen
 
+#13. sort
+words = ['banana', 'apple', 'cherry']
+print(sorted(words))  # Sorts the list of words alphabetically
+
 #!================================================================
 #?string slicing
 
@@ -92,9 +96,9 @@ print(text[::-1])  # Output: "nohtyp" (reverses the string)
 print(text[-4:-1])  # Output: "tho" (slices from index -4 to -1, exclusive)
 
 #!================================================================
-#?inputs 
+#?inputs input() always returns a string 
 
-car = input('what car do you prefer') #output is always a string
+car = input('what car do you prefer?') #output is always a string
 print(f'your favorite car is {car}')
 
 #!================================================================

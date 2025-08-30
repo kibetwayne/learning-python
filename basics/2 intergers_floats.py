@@ -56,3 +56,9 @@ print(round(3.14159, 2))  # Output: 3.14
 print(round(3.14159)) # Output: 3 (rounds to the nearest integer)
 #5. pow
 print(pow(2, 3))  # Output: 8 (2 raised to the power of 3)
+#6. sort
+print(sorted([5, 2, 9, 1]))  # Output: [1, 2, 5, 9] (sorted list)
+#7. sum
+print(sum([1, 2, 3, 4, 5]))  # Output: 15 (sum of the list)
+#8. divmod
+print(divmod(10, 3))  # Output: (3, 1) (quotient and remainder)
