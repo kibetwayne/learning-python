@@ -1,94 +1,66 @@
+def winning_line(strings):
+    strings = set(strings)
+    return len(strings) == 1 and ' ' not in strings
 
-#**horizontal winner in tic tac toe
-def assert_equal(actual, expected):
-    if actual == expected:
-        print("OK")
-    else:
-        print(f"Error! {repr(actual)} != {repr(expected)}")
+def row_winner(board):
+    return any(winning_line(row) for row in board)
+
+def column_winner(board):
+    return any(winning_line(list(col)) for col in zip(*board))
+
+def main_diagonal_winner(board):
+    return winning_line([row[i] for i, row in enumerate(board)])
+
+def diagonal_winner(board):
+    return (main_diagonal_winner(board) or
+            main_diagonal_winner(list(reversed(board))))
 
 def winner(board):
     return row_winner(board) or column_winner(board) or diagonal_winner(board)
-        
-def row_winner(board):
-    for row in board:
-        status = True
-        first_entry = row[0]
-        for single_char in row:
-            if single_char == ' ' or first_entry != single_char:
-                status = False
-                break
-        if status:
-            return True
-    return False
 
+def draw(board):
+    return all(cell != ' ' for row in board for cell in row)
 
-#**vertical winner in tic tac toe
-def assert_equal(actual, expected):
-    if actual == expected:
-        print("OK")
-    else:
-        print(f"Error! {repr(actual)} != {repr(expected)}")
-        
-def column_winner(board):
-    for col in range(len(board[0])):
-        status = True
-        first_entry = board[0][col]
-        for row in range(len(board)):
-            if board[row][col] == ' ' or first_entry != board[row][col]:
-                status = False
-                break
-        if status:
-            return True
-    return False
+def format_board(board):
+    size = len(board)
+    line = f'\n  {"+".join("-" * size)}\n'
+    rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
+    return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
 
+def play_move(board, player):
+    print(f'{player} to play:')
+    row = int(input()) - 1
+    col = int(input()) - 1
+    board[row][col] = player
+    print(format_board(board))
 
+def make_board(size):
+    return [[' '] * size for _ in range(size)]
 
-#**diagonal winner in tic tac toe
-def assert_equal(actual, expected):
-    if actual == expected:
-        print("OK")
-    else:
-        print(f"Error! {repr(actual)} != {repr(expected)}")
-        
-def diagonal_winner(board):
-    first = board[0][0]
-    last = board[0][len(board)-1]
-    first1 = 1
-    first2 = len(board) - 2
-    status1 = True
-    status2 = True
+def print_winner(player):
+    print(f'{player} wins!')
 
-    
-    for i in range(len(board)):
-        if first != board[i][i] or first == ' ':
-            status1 = False
+def print_draw():
+    print("It's a draw!")
+
+def play_game(board_size, player1, player2):
+    board = make_board(board_size)
+    print(format_board(board))
+
+    players = [player1, player2]
+    turn = 0
+
+    while True:
+        current_player = players[turn % 2]
+        play_move(board, current_player)
+
+        if winner(board):
+            print_winner(current_player)
             break
-        
-
-    for i in range(len(board) -1):
-        if last != board[first1][first2] or last == ' ':
-            status2 = False
+        if draw(board):
+            print_draw()
             break
-        first1 += 1
-        first2 -= 1
-    # diagonal1 = []
-    # diagonal2 = []
-    # for i in range(len(board)):
-    #     diagonal1.append(board[i][i])
-    #     diagonal2.append(board[i][-i-1])
-            
-    return status1 or status2
 
-assert_equal(
-    winner(
-        [
-            ['X', 'X', 'X', ' '],
-            ['X', 'X', ' ', ' '],
-            ['X', ' ', 'O', 'X'],
-            [' ', ' ', 'O', 'X']
-        ]
-    ),
-    False
-)
+        turn += 1
 
-
+play_game(3, 'X', 'O')
