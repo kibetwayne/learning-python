@@ -1,5 +1,7 @@
 #📑STRINGS
-#!strings are immutabe. python doesnt change the original value of a string. You simply can't change the original string - you can only create new variables and asing the changes to it.
+'''strings are immutabe. python doesnt change the original value of a string. You simply can't change the original string - you can only create new variables and asing the changes to it.
+
+you can loop through strings'''
 
 #👉string methods
 print(help(str))#list all methods on string and what they do

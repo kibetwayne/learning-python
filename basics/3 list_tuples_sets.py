@@ -36,6 +36,11 @@ print(my_list.index(2))      #rerurns the first occurence of the value in a list
 print(my_list.count(2))       #count how many times a value appears in the list
 
 
+cart = []
+cart[0] = 'dog'
+cart[1] = 'box'
+print(cart)   #? ERROR:list assignment index out of range. For lists, subscript assignment only works for existing valid indices.
+
 nums = [2, 9, 1, 8, 5, 64]   #?syntax value in some_list
 print(7 in nums)     #in: A comparison operator that checks if a value is in a list 
 
@@ -62,7 +67,9 @@ empty_tuple = tuple()
 
 '''
 are like lists only difference is they are immutable
-methods in lists that are used to mutate original list arent available in tuples'''
+methods in lists that are used to mutate original list arent available in tuples
+iteration is faster in tuples than in lists
+'''
 my_tuple = (1, 2, 3, 4, 5)
 print(my_tuple[0])         # Output: 1
 # my_tuple[1] = 10         # Error: Tuples are immutable
@@ -70,10 +77,11 @@ print(my_tuple[0])         # Output: 1
 #!================================================================
 #📑📑SETS{}
 empty_set = {}            #this isnt right as it creates an empty dictionary
-empty_list = set()        #how to create empty lists
+empty_set2 = set()        #how to create empty lists
 
 '''
-A set is an unordered, mutable collection of unique items. Sets do not allow duplicates and do not maintain any specific order of elements.
+A set is an unordered, mutable collection of unique items. 
+Sets do not allow duplicates and do not maintain any specific order of elements.
 The order of elements is not preserved, and they are accessed by value, not by index.
 '''
 my_set = {1, 2, 3, 4, 5}
@@ -85,6 +93,6 @@ my_set.add(6)              # Adds 6 to the set
 my_set.add(3)              # No effect, as 3 is already in the set
 print(my_set)              # Output: {1, 2, 3, 4, 5, 6}
 
-print(cs_courses.intersection(art_courses)) #used to check which elements are share across multiple sets
+print(cs_courses.intersection(art_courses)) #used to check which elements are shared across multiple sets
 print(cs_courses.difference(art_courses)) #used to check which elements are the 1st set but not in second
 print(cs_courses.union(art_courses)) #join elements in all the sets
