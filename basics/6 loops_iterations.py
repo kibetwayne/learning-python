@@ -50,6 +50,52 @@ for i in range(5):
         continue
     print(i)
 
+# Keep asking the user for a number until they enter 0. Then stop. 
+while True:
+    number = int(input('whats your number '))
+    if number == 0:
+        break
+
+# Count the number of digits in a number   
+num = 12345
+count = 0
+
+while num > 0:
+    num //= 10      # integer division (removes the last digit)
+    count += 1
+
+print("Number of digits:", count)
+
+#reverse numbers
+num = 123
+reversed_num = 0
+
+while num > 0:
+    digit = num % 10          # get last digit
+    reversed_num = reversed_num * 10 + digit
+    num //= 10                # remove last digit
+
+print("Reversed:", reversed_num)
+
+#finobacci series
+sequence = []
+s = 0
+counter = 0
+
+while len(sequence) <= 9:
+    if counter >= 2:
+        num = sequence[counter-1] + sequence[counter-2]
+        sequence.append(num)
+    elif counter < 2:
+        num = s+counter
+        sequence.append(num)
+    s = num
+    counter += 1
+
+print(sequence)
+
+
+
 #👉👉NESTED LOOPS == loops within loops
 num = [1,2,3,4,5,6,7,8]
 for i in num:
