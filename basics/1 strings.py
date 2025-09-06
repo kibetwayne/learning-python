@@ -4,7 +4,7 @@
 you can loop through strings'''
 
 #👉string methods
-#print(help(str))#list all methods on string and what they do
+print(help(str))#list all methods on string and what they do
 
 message = 'hello world'
 print(dir(message)) #gives a list of all available methods
