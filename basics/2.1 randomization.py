@@ -1,7 +1,9 @@
 #♦️Number Generation
 import random
-#1. random.random() = returns a random float between 0.0 to 1.0
+#1. random.random() = returns a random float from 0.0 to 1.0 (excludes 1.0)
 print(f'random.random = {random.random()}')
+print(f'random.random * 5 = {random.random() * 5}') #inc range to 5
+print(f'random.random * 100 = {random.random() * 100}') #inc range to 100
 
 #2. random.uniform(a, b) = returns a random float between a to b
 print(f'random.uniform(1, 10) = {random.uniform(1,10)}')
@@ -27,3 +29,23 @@ print(f'random.sample(colors, k=3) = {random.sample(colors, k=3)}')
 print(f'Before shuffle: {colors}')
 random.shuffle(colors)
 print(f'After shuffle: {colors}')
+
+#♦️ State control
+#1. random.seed() = same results every time the code is run
+random.seed(10)
+print(f'random.random with seed 10 = {random.randint(1, 10)}')
+
+# There are 20 participants (named "P1" to "P20").
+# Each participant’s name is placed in the lottery box.
+# Step 1: Use random.choices() to pick 5 names with replacement (these are raffle tickets, so the same participant can appear more than once).
+# Step 2: From those 5 names, use random.sample() to select 2 unique winners.
+# Step 0: Create participants list
+participants = [f"P{i}" for i in range(1, 21)]
+
+# Step 1: Pick 5 names with replacement
+raffle_draw = random.choices(participants, k=5)
+print("Raffle tickets:", raffle_draw)
+
+# Step 2: Pick 2 winners (unique) from those 5
+winners = random.sample(raffle_draw, k=2)
+print("Final winners:", winners)
