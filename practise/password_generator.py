@@ -22,6 +22,7 @@ pass_word = []
 for i in range(nr_numbers):
     pass_word += random.choice(numbers)
 
+
 for i in range(nr_letters):
     pass_word += random.choice(letters)
 
