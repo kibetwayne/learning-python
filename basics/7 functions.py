@@ -125,7 +125,11 @@ def concatenate(*words):
     return '-'.join(words)
 print(concatenate('hello', 'world', '!')) # Output: Hello-world-!
 
-#?kwargs
+#?kwargs keyword arguments
+def greet_with_details(name, age):
+    print(f"Hello, {name}. Your age is {age}.")
+    
+greet_with_details(age=25, name="Alice")  # Output: Hello, Alice. Your age is 25.
 def greet_with_details(**details):
     print(f"Hello, {details['name']}. Your age is {details['age']}.")
 
@@ -150,3 +154,19 @@ greet()
 message = "Hello, welcome!"
 def greet():
     print(message)
+    
+#!================================================================
+#prime number checker
+def is_prime_number(number):
+    is_prime = True
+    for i in range(2, number - 1):
+        if number % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print('Its a prime number')
+    else:
+        print('Its not a prime number')
+        
+n = int(input('Check this number: '))
+is_prime_number(number = n)

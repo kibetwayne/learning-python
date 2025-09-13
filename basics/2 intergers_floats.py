@@ -1,3 +1,6 @@
+import math
+
+
 #📑📑ARITHMETIC OPERATORS
 print(3 + 2)   # Addition
 print(3 - 2)   # Subtraction
@@ -62,3 +65,11 @@ print(sorted([5, 2, 9, 1]))  # Output: [1, 2, 5, 9] (sorted list)
 print(sum([1, 2, 3, 4, 5]))  # Output: 15 (sum of the list)
 #8. divmod
 print(divmod(10, 3))  # Output: (3, 1) (quotient and remainder)
+#9. math.floor()
+print(math.floor(3.7))  # Output: 3 (rounds down to the nearest integer)
+#10. math.ceil()
+print(math.ceil(3.2))  # Output: 4 (rounds up to the nearest integer)
+#11. math.trunc()
+print(math.trunc(3.9))  # Output: 3 (removes the decimal part)
+#12. int()
+print(int(3.9))  # Output: 3 (converts float to integer by truncating)
