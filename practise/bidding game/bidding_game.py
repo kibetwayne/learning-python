@@ -24,7 +24,7 @@ def find_winner(bidders):
 
     for key, value in bidders.items():
         if value == winner_bid:
-            print(f'the winner is {key} with a bid of {winner_bid}')
+            print(f'the winner of the bid is {key} with a bid of {winner_bid}')
 
 all_bidders = bidding_game()
 find_winner(all_bidders)
