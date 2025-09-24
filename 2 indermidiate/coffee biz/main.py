@@ -22,9 +22,8 @@ while is_on:
     else:
         drink = menu.find_drink(choice)
         if drink:
-            # 1. Check if resources are enough
-            if coffee_maker.is_resource_sufficient(drink):
-                # 2. Process payment
-                if money_machine.make_payment(drink.cost):
-                    # 3. Make coffee
-                    coffee_maker.make_coffee(drink)
+            # 1. Check if resources are enough and Process payment
+
+            if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
+                # 3. Make coffee
+                coffee_maker.make_coffee(drink)
