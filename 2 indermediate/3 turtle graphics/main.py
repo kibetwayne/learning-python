@@ -66,4 +66,5 @@ def draw_spirograph(gap_size):
         tim.circle(100)            # radius of circle
         tim.setheading(tim.heading() + gap_size)  # turn by gap size
 
+
 draw_spirograph(5)  # try smaller gap for denser design
