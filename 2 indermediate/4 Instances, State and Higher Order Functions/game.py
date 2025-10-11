@@ -42,7 +42,6 @@ for num in range(7):
 if user_bet:
     is_race_on = True
 
-
 while is_race_on:
     for turtle in all_turtles:
         rand_distance = random.randint(0, 10) #random distance to move forward
