@@ -13,7 +13,7 @@ screen.tracer(0) # Turn off the screen updates. changes will be shown only when 
 #creating instances
 snake = Snake() 
 food = Food() 
-Scoreboard = Scoreboard() 
+scoreboard = Scoreboard() 
 
 # move snake on key press
 screen.listen() 
@@ -37,18 +37,23 @@ while game_is_on:
         new_segment.goto(snake.segments[-1].position()) # Position the new segment at the position of the last segment
         snake.segments.append(new_segment)
         
-        Scoreboard.increase_score() # Increase the score by 1
+        scoreboard.increase_score() # Increase the score by 1
         
     #detect collision with wall
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_is_on = False
-        Scoreboard.game_over()
+    if (
+        snake.head.xcor() > 280 
+        or snake.head.xcor() < -280 
+        or snake.head.ycor() > 280 
+        or snake.head.ycor() < -280
+        ):
+        scoreboard.reset()
+        snake.reset()
     
     #detect collision with tail
     for segment in snake.segments[1:]: # Loop through all the segments except the head
         if snake.head.distance(segment) < 10: # If the distance between the head and any segment is less than 10
-            game_is_on = False
-            Scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
     snake.move() # Move the snake forward
 
