@@ -1,0 +1,30 @@
+import os 
+
+#get the base directory of the current script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+#full paths to the file
+name_path = os.path.join(base_dir, '../mail merging/input/letters/names/invited_names.txt')
+letter_path = os.path.join(base_dir, '../mail merging/input/letters/starting_letter.docx')
+output_dir = os.path.join(base_dir, '../mail merging/output/readyToSend')
+
+#getting names to be addressed to
+recipient = []
+
+with open(name_path) as names_file:
+    names = names_file.readlines()
+    for line in names:
+        line = line.strip() #remove spaces or \n
+        recipient.append(line)
+
+#creating the letters
+with open(letter_path) as letter_file:
+    letter_contents = letter_file.read()
+    
+for name in recipient:
+    lines = name.strip() #remove spaces or \n
+    with open(f"{name}.txt", mode='w') as file:
+        personalized_letter = letter_contents.replace("[name]", lines)
+
+
+        
