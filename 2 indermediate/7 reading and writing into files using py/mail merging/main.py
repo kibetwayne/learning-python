@@ -23,8 +23,14 @@ with open(letter_path) as letter_file:
     
 for name in recipient:
     lines = name.strip() #remove spaces or \n
-    with open(f"{name}.txt", mode='w') as file:
-        personalized_letter = letter_contents.replace("[name]", lines)
+    personalized_letter = letter_contents.replace("[name]", lines)
+    
+    #create pathe to readyToSend folder
+    file_path = os.path.join(output_dir, f"{lines}.txt")
+
+    #saving the letters in readyToSend folder
+    with open(file_path, mode='w') as file:
+        file.write(personalized_letter)
 
 
         
