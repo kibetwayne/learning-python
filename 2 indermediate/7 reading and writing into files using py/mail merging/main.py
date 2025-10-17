@@ -9,23 +9,18 @@ letter_path = os.path.join(base_dir, '../mail merging/input/letters/starting_let
 output_dir = os.path.join(base_dir, '../mail merging/output/readyToSend')
 
 #getting names to be addressed to
-recipient = []
-
 with open(name_path) as names_file:
     names = names_file.readlines()
-    for line in names:
-        line = line.strip() #remove spaces or \n
-        recipient.append(line)
 
 #creating the letters
 with open(letter_path) as letter_file:
     letter_contents = letter_file.read()
     
-for name in recipient:
+for name in names:
     lines = name.strip() #remove spaces or \n
     personalized_letter = letter_contents.replace("[name]", lines)
     
-    #create pathe to readyToSend folder
+    #create path to readyToSend folder
     file_path = os.path.join(output_dir, f"{lines}.txt")
 
     #saving the letters in readyToSend folder
