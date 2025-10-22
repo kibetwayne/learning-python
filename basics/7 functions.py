@@ -117,7 +117,7 @@ assert_equal(double(5), 10)
 
 #👉👉Args & Kwargs
 '''
-args == For a variable number of positional arguments.
+args == For a variable number of positional arguments. You want a function to accept any number of arguments.
 kwargs == For a variable number of keyword arguments.
 '''
 #?args
