@@ -1,7 +1,7 @@
 ''' comprehension is a readable way to create a sequence by applying an expression to each item in an iterable
 '''
 #?list comprehension
-#syntax => [expression for item in iterable if condition ]
+#syntax => [new_item for item in iterable if condition ]
 
 nums = [1,2,3,4,5,6,7,8,9,10]
 my_list1 = []
@@ -29,13 +29,13 @@ print(f'letter_list2: {letter_list2}')
 
 #!================================================================
 #?dictionary comprehension
-#syntax => {key_expression: value_expression for item in iterable if condition}
+#syntax => {new_key: new_value for item in iterable if condition}
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 squared_dict = {n: n*n for n in numbers if n % 2 == 0} 
 print(f'squared_dict: {squared_dict}')
 
-#transforming a list into a dictionary
+#*transforming a list into a dictionary
 name = ['bruce', 'clark', 'peter', 'wade', 'tony', 'steve']
 second_name = ['wayne', 'kent', 'parker', 'wilson', 'stark', 'rogers']
 
@@ -51,6 +51,8 @@ words = ["apple", "banana", "cherry"]
 word_length_dict = {word: len(word) for word in words}
 print(word_length_dict)
 
+#*creating a new dictionary from an existing dictionary
+#synatx => {new_key:new_value for(key,value) in dictionary.items() if condition}
 original = {'a': 1, 'b': 2, 'c': 3}
 reversed_dict = {v: k for k, v in original.items()}
 print(reversed_dict)

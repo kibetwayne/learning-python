@@ -47,3 +47,22 @@
 # print(data_frame)
 # data_frame.to_csv('new_data.csv') # exporting dataframe to csv file
 
+# #!=========================================
+student_dict = {
+    'student': ['angela', 'james', 'lily'],
+    'score': [56, 76, 98]
+}
+
+import pandas
+
+student_df = pandas.DataFrame(student_dict)
+
+#*looping through a data frame
+# for (key, value) in student_df.items():
+#     print(key) #title(head) of each column
+#     print(value) #data in each column
+
+#*looping through rows of a data frame
+for (index, row) in student_df.iterrows():
+    print(row.student)
+    
