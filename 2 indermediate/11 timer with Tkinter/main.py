@@ -9,14 +9,36 @@ FONT = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
+timer = None
 
 
-# ---------------------------- TIMER RESET 
-# ---------------------------- TIMER MECHANISM 
+#! TIMER RESET 
+def reset_timer():
+    """Resets the timer to its initial state."""
+    global reps
+    window.after_cancel(timer) # Cancel the ongoing timer
+    canvas.itemconfig(timer_text, text="00:00")
+    title_label.config(text="Timer", fg=GREEN)
+    check_marks.config(text="")
+    reps = 0
+    
+#! TIMER MECHANISM 
 def start_timer():
     """Starts the timer mechanism."""
-    count_down(5*60)
-# ---------------------------- COUNTDOWN MECHANISM 
+    global reps
+    reps += 1
+    if reps % 8 == 0:
+        count_down(LONG_BREAK_MIN * 60)
+        title_label.config(text="Break", fg=RED)
+    elif reps % 2 == 0:
+        count_down(SHORT_BREAK_MIN * 60)
+        title_label.config(text="Break", fg=PINK)
+    else:
+        count_down(WORK_MIN * 60)
+        title_label.config(text="Work", fg=GREEN)
+        
+#! COUNTDOWN MECHANISM 
 def count_down(count):
     """Counts down the time and updates the canvas text."""
     
@@ -24,8 +46,18 @@ def count_down(count):
     count_sec = count % 60
     canvas.itemconfig(timer_text, text=f"{count_min:02}:{count_sec:02}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
-# ---------------------------- UI SETUP 
+        global timer
+        timer = window.after(1000, count_down, count - 1) 
+    else:
+        start_timer()
+        if reps % 2 == 0:
+            marks = ""
+            work_sessions = math.floor(reps / 2) # Calculate completed work sessions
+            for _ in range(work_sessions):
+                marks += "✔️"
+            check_marks.config(text=marks)
+        
+#! UI SETUP 
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=5, pady=5, bg=GREY)
@@ -42,10 +74,10 @@ canvas.grid(column=1, row=1)
 start_button = Button(text="Start", highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0)
+reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
-check_marks = Label(text="✔️", fg=GREEN, bg=GREY, font=(FONT, 20, "bold"))
+check_marks = Label(fg=GREEN, bg=GREY, font=(FONT, 20, "bold"))
 check_marks.grid(column=1, row=3)
 
 
