@@ -130,3 +130,6 @@ print(f'your weight is {weight_str}kg')
 is_student = input('are you a student?')
 is_student_bool = bool(is_student)
 print(f'you are a student: {is_student_bool}')
+
+#6. boolean to string
+is_student_bool = True
