@@ -133,3 +133,8 @@ print(f'you are a student: {is_student_bool}')
 
 #6. boolean to string
 is_student_bool = True
+
+#7. string to list
+fruits_str = "apple,banana,cherry"
+fruits_list = fruits_str.split(",")
+print(fruits_list)  # Output: ['apple', 'banana', 'cherry']
